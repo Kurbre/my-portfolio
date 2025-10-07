@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import type { IProps } from '../model/props.ts'
+import type { IProps } from '../model/props.types.ts'
 import cn from 'classnames'
 
 const Container: FC<IProps> = ({ children, className, ...props }) => {

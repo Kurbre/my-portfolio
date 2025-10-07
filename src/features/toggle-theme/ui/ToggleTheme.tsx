@@ -1,10 +1,13 @@
-import { useTheme } from '../../../shared/lib/theme'
+import { useTheme } from '../../../shared/theme'
 
 const ToggleTheme = () => {
 	const { toggleTheme, isDarkTheme } = useTheme()
 
 	return (
-		<div className='text-white cursor-pointer' onClick={toggleTheme}>
+		<div
+			className='dark:text-white text-black cursor-pointer'
+			onClick={toggleTheme}
+		>
 			{isDarkTheme ? 'Dark' : 'Light'}
 		</div>
 	)

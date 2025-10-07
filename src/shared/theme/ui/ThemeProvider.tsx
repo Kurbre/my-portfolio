@@ -1,4 +1,4 @@
-import { ThemeContext } from '../model/ThemeContext.ts'
+import { ThemeContext } from '../model/ThemeContext'
 import { type FC, type PropsWithChildren, useEffect, useState } from 'react'
 
 const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {

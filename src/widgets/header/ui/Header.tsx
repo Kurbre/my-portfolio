@@ -1,4 +1,9 @@
-import { FaGithub, FaGithubSquare, FaInstagram, FaTelegram } from 'react-icons/fa'
+import {
+	FaGithub,
+	FaGithubSquare,
+	FaInstagram,
+	FaTelegram
+} from 'react-icons/fa'
 import { Container } from '../../../shared/ui/container'
 import { Subtitle } from '../../../shared/ui/subtitle'
 import { ToggleTheme } from '../../../features/toggle-theme'
@@ -11,13 +16,10 @@ const Header = () => {
 		<header
 			className='w-full h-[700px] md:h-[800px] flex items-center relative
 		bg-gradient-to-br from-gray-300 to-gray-50
-		dark:from-gray-900 dark:to-gray-700 overflow-hidden'
+		dark:from-gray-900 dark:to-gray-700 overflow-hidden shadow-lg'
 		>
 			<Burger />
-			<div
-				className='rotate-270 font-sans font-semibold text-lg flex items-center gap-3
-			dark:text-white -ml-32 md:-ml-21'
-			>
+			<div className='rotate-270 font-sans font-semibold text-lg flex items-center gap-3 -ml-32 md:-ml-21'>
 				<span className='whitespace-nowrap'>Социальные сети</span>
 				<div className='w-10 h-[2px] bg-black dark:bg-white' />
 				<a rel='stylesheet' href='https://github.com/Kurbre' target='_blank'>
@@ -40,7 +42,7 @@ const Header = () => {
 			<Container className='flex items-center justify-between gap-5 h-full -ml-36 xl:ml-56'>
 				<div className='z-10'>
 					<Subtitle>Меня зовут Илья</Subtitle>
-					<h2 className='text-5xl max-w-[480px] dark:text-white mb-4'>
+					<h2 className='text-5xl max-w-[480px] mb-4'>
 						Я web-разработчик из Украины
 					</h2>
 					<div className='flex gap-3'>

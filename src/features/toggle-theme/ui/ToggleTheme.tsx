@@ -1,7 +1,7 @@
-import {useTheme} from '../../../shared/theme'
-import {MdLightMode, MdOutlineDarkMode} from 'react-icons/md'
+import { useTheme } from '../../../shared/theme'
+import { MdLightMode, MdOutlineDarkMode } from 'react-icons/md'
 import cn from 'classnames'
-import {type JSX, useEffect, useState} from 'react'
+import { type JSX, useEffect, useState } from 'react'
 
 const ToggleTheme = () => {
 	const { toggleTheme, isDarkTheme } = useTheme()
@@ -19,7 +19,7 @@ const ToggleTheme = () => {
 						<MdLightMode size={18} />
 					)
 				),
-			100
+			150
 		)
 
 		return () => clearTimeout(timeout)
@@ -28,13 +28,13 @@ const ToggleTheme = () => {
 	return (
 		<div
 			className='dark:text-white text-black cursor-pointer w-[80px] h-10 border border-gray-700
-			rounded-full flex flex-items p-1'
+			rounded-full flex flex-items p-1 mt-3'
 			onClick={toggleTheme}
 		>
 			<div
 				className={cn(
 					'bg-white dark:bg-gray-700 w-8 flex items-center justify-center ' +
-						'rounded-full ease-in-out duration-300',
+						' rounded-full transition-transform duration-300 ease-in-out',
 					isDarkTheme && 'translate-x-9'
 				)}
 			>

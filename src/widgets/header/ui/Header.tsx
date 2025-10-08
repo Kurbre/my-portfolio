@@ -10,8 +10,11 @@ import { ToggleTheme } from '../../../features/toggle-theme'
 import { Button } from '../../../shared/ui/button'
 import { Burger } from '../../../features/burger'
 import backgroundOne from '../assets/background1.png'
+import { useScroll } from '../../../shared/scroll'
 
 const Header = () => {
+	const { scrollToComponent } = useScroll()
+
 	return (
 		<header
 			className='w-full h-[700px] md:h-[800px] flex items-center relative
@@ -47,7 +50,10 @@ const Header = () => {
 					</h2>
 					<div className='flex gap-3'>
 						<Button>Портфолио</Button>
-						<Button className='bg-none shadow-none hover:shadow-none'>
+						<Button
+							className='bg-none shadow-none hover:shadow-none'
+							onClick={() => scrollToComponent('about')}
+						>
 							Обо мне
 						</Button>
 					</div>

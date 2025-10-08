@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import type { IProps } from '../model/types.ts'
+import type { IProps } from '../model/types'
 import cn from 'classnames'
 
 const Subtitle: FC<IProps> = ({ children, className, ...props }) => {

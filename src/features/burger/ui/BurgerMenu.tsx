@@ -1,11 +1,17 @@
 import { forwardRef } from 'react'
 import type { IProps } from '../model/types'
-import { links } from '../model/links'
+import { linksData } from '../model/data'
 import cn from 'classnames'
+import { type SectionsKeys, useScroll } from '../../../shared/scroll'
 
 const BurgerMenu = forwardRef<HTMLDivElement, IProps>(
 	({ isOpen, setIsOpen }, ref) => {
-		const clickHandler = () => setIsOpen(false)
+		const { scrollToComponent } = useScroll()
+
+		const clickHandler = (key: SectionsKeys) => {
+			setIsOpen(false)
+			scrollToComponent(key)
+		}
 
 		return (
 			<div
@@ -15,7 +21,7 @@ const BurgerMenu = forwardRef<HTMLDivElement, IProps>(
 						? 'opacity-100 z-20 bg-black/20 dark:bg-black/40'
 						: 'opacity-0 pointer-events-none bg-transparent'
 				)}
-				onClick={clickHandler}
+				onClick={() => setIsOpen(false)}
 			>
 				<div
 					ref={ref}
@@ -27,13 +33,14 @@ const BurgerMenu = forwardRef<HTMLDivElement, IProps>(
 					)}
 				>
 					<ul className='flex flex-col gap-5 list-disc ml-5'>
-						{links.map(({ href, label }, i) => (
+						{linksData.map(({ href, label }, i) => (
 							<li
 								key={href + label + i}
-								className='uppercase font-bold font-mono text-2xl hover:scale-105 hover:opacity-80 duration-300'
-								onClick={clickHandler}
+								className='uppercase font-bold font-mono text-2xl hover:scale-105 hover:opacity-80
+								duration-300 cursor-pointer'
+								onClick={() => clickHandler(href)}
 							>
-								<a href={href}>{label}</a>
+								{label}
 							</li>
 						))}
 					</ul>

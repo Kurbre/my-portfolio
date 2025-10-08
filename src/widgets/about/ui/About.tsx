@@ -1,12 +1,15 @@
-import {Container} from '../../../shared/ui/container'
-import {Subtitle} from '../../../shared/ui/subtitle'
-import {Title} from '../../../shared/ui/title'
-import {skillsData} from '../model/data'
+import { Container } from '../../../shared/ui/container'
+import { Subtitle } from '../../../shared/ui/subtitle'
+import { Title } from '../../../shared/ui/title'
+import { skillsData } from '../model/data'
 import photoOne from '../assets/photo1.png'
+import { useScroll } from '../../../shared/scroll'
 
 const About = () => {
+	const { refs } = useScroll()
+
 	return (
-		<section className='dark:bg-gray-700'>
+		<section className='dark:bg-gray-700' ref={refs.about}>
 			<Container>
 				<div className='flex gap-5 flex-wrap sm:flex-nowrap'>
 					<img

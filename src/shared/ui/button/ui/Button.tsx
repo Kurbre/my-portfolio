@@ -9,8 +9,7 @@ export const Button = forwardRef<HTMLButtonElement, IProps>(
 				className={cn(
 					`cursor-pointer min-w-[135px] flex justify-center items-center 
 					bg-gradient-to-tr from-amber-500 to-amber-300 dark:from-gray-700 dark:to-gray-500 
-					dark:text-white transition
-					h-12 font-mono font-semibold text-lg rounded-lg duration-300 
+					transition h-12 font-mono font-semibold text-lg rounded-lg duration-300 
 					ease-in-out shadow-md hover:shadow-lg hover:scale-105 hover:brightness-110`,
 					className
 				)}

@@ -10,7 +10,7 @@ const Title: FC<IProps> = ({
 }) => {
 	const positionLineStyles = {
 		left: 'w-14',
-		center: 'w-full',
+		center: 'w-14 flex mx-auto',
 		right: 'w-14 absolute right-0'
 	}
 

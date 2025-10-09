@@ -1,4 +1,4 @@
-import type { ISkillsItemProps } from './types.ts'
+import type { ISkillsItemProps } from './types'
 import {
 	SiNestjs,
 	SiPrisma,

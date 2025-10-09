@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import type { ISkillsItemProps } from '../data/types.ts'
+import type { ISkillsItemProps } from '../data/types'
 
 const SkillsItem: FC<ISkillsItemProps> = ({ title, icon }) => {
 	return (

@@ -4,5 +4,8 @@ import type {
 	PropsWithChildren
 } from 'react'
 
-
-export interface IProps extends DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, PropsWithChildren {}
+export interface IProps
+	extends DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>,
+		PropsWithChildren {
+	position?: 'left' | 'center'
+}

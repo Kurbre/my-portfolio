@@ -3,10 +3,13 @@ import { Subtitle } from '../../../shared/ui/subtitle'
 import { Title } from '../../../shared/ui/title'
 import { skillsData } from '../data/data'
 import SkillsItem from './SkillsItem'
+import { useScroll } from '../../../shared/scroll'
 
 const Skills = () => {
+	const { refs } = useScroll()
+
 	return (
-		<section>
+		<section ref={refs.skills}>
 			<Container>
 				<div className='flex items-center flex-col'>
 					<Subtitle position='center' className='-left-3'>

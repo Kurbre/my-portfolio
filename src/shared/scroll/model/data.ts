@@ -1,1 +1,6 @@
-export const scrollData = ['about', 'experience', 'skills'] as const
+export const scrollData = [
+	'about',
+	'experience',
+	'skills',
+	'portfolio'
+] as const

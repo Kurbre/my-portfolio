@@ -49,7 +49,9 @@ const Header = () => {
 						Я web-разработчик из Украины
 					</h2>
 					<div className='flex gap-3'>
-						<Button>Портфолио</Button>
+						<Button onClick={() => scrollToComponent('portfolio')}>
+							Портфолио
+						</Button>
 						<Button
 							className='bg-none shadow-none hover:shadow-none'
 							onClick={() => scrollToComponent('about')}

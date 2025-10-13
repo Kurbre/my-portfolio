@@ -4,7 +4,7 @@ export const linksData: ILinksData[] = [
 	{ label: 'Обо мне', href: 'about' },
 	{ label: 'Опыт', href: 'experience' },
 	{ label: 'Мои навыки', href: 'skills' },
-	{ label: 'Обо мне', href: 'about' },
+	{ label: 'Портфолио', href: 'portfolio' },
 	{ label: 'Обо мне', href: 'about' },
 	{ label: 'Контакты', href: 'about' }
 ]

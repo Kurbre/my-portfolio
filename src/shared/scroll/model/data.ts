@@ -2,5 +2,6 @@ export const scrollData = [
 	'about',
 	'experience',
 	'skills',
-	'portfolio'
+	'portfolio',
+	'contact'
 ] as const

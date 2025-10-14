@@ -1,12 +1,12 @@
 import type {
+	ButtonHTMLAttributes,
 	DetailedHTMLProps,
-	HTMLAttributes,
 	PropsWithChildren
 } from 'react'
 
 export interface IProps
 	extends DetailedHTMLProps<
-			HTMLAttributes<HTMLButtonElement>,
+			ButtonHTMLAttributes<HTMLButtonElement>,
 			HTMLButtonElement
 		>,
 		PropsWithChildren {}

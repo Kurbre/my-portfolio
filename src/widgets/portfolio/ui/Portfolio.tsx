@@ -1,12 +1,12 @@
-import { Subtitle } from '../../../shared/ui/subtitle'
-import { Container } from '../../../shared/ui/container'
-import { Title } from '../../../shared/ui/title'
-import { useScroll } from '../../../shared/scroll'
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import {Subtitle} from '../../../shared/ui/subtitle'
+import {Container} from '../../../shared/ui/container'
+import {Title} from '../../../shared/ui/title'
+import {useScroll} from '../../../shared/scroll'
+import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 import Slider from 'react-slick'
 import PortfolioItem from './PortfolioItem'
-import { useRef } from 'react'
-import { usePortfolio } from '../model/hooks/usePortfolio'
+import {useRef} from 'react'
+import {usePortfolio} from '../model/hooks/usePortfolio'
 
 const Portfolio = () => {
 	const { refs } = useScroll()
@@ -39,7 +39,7 @@ const Portfolio = () => {
 					<Slider
 						dots={true}
 						infinite={true}
-						speed={500}
+						speed={700}
 						slidesToShow={1}
 						slidesToScroll={1}
 						arrows={false}

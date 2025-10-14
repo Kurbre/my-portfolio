@@ -22,4 +22,14 @@ body {
     section {
         @apply pt-16 md:pt-31;
     }
+
+    .dark .slick-dots li button:before {
+        color: white !important;
+        opacity: 1;
+    }
+
+    .dark .slick-dots li.slick-active button:before {
+        color: white !important;
+        opacity: 1 !important;
+    }
 }

@@ -1,6 +1,6 @@
-import type { FC } from 'react'
-import type { IPortfolioData } from '../model/types'
-import { IoMdPlanet } from 'react-icons/io'
+import type {FC} from 'react'
+import type {IPortfolioData} from '../model/types'
+import {IoMdPlanet} from 'react-icons/io'
 
 const PortfolioItem: FC<IPortfolioData> = ({
 	url,
@@ -10,8 +10,6 @@ const PortfolioItem: FC<IPortfolioData> = ({
 }) => {
 	const urlIframe = url.split('watch?v=').join('embed/')
 	const isYoutubeUrl = url.includes('www.youtube.com')
-
-	console.log(urlIframe)
 
 	return (
 		<div className='bg-gray-200 dark:bg-gray-600 p-6 md:p-10 lg:p-12 rounded-3xl w-full flex flex-col md:flex-row lg:flex-row gap-6 md:gap-8 lg:gap-10 items-center lg:items-start'>

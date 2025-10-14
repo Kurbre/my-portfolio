@@ -2,7 +2,7 @@ import { Container } from '../../../shared/ui/container'
 import { Subtitle } from '../../../shared/ui/subtitle'
 import { Title } from '../../../shared/ui/title'
 import { skillsData } from '../model/data'
-import photoOne from '../assets/photo1.png'
+import photoOne from '../assets/images/photo1.png'
 import { useScroll } from '../../../shared/scroll'
 
 const About = () => {

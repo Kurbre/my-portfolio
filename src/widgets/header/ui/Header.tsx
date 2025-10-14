@@ -9,7 +9,7 @@ import { Subtitle } from '../../../shared/ui/subtitle'
 import { ToggleTheme } from '../../../features/toggle-theme'
 import { Button } from '../../../shared/ui/button'
 import { Burger } from '../../../features/burger'
-import backgroundOne from '../assets/background1.png'
+import background from '../assets/images/background.png'
 import { useScroll } from '../../../shared/scroll'
 
 const Header = () => {
@@ -63,7 +63,7 @@ const Header = () => {
 				</div>
 				<div className='flex justify-end items-end absolute -right-10 md:right-28 -bottom-[65.5px] sm:-bottom-[82.5px] md:-bottom-[100px] lg:-bottom-[134.5px]'>
 					<img
-						src={backgroundOne}
+						src={background}
 						alt='Background'
 						className='w-auto lg:h-[774px] md:h-[574px] sm:h-[474px] h-[374px] bg-no-repeat bg-bottom bg-cover z-[1]'
 					/>

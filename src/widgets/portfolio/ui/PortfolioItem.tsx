@@ -1,6 +1,6 @@
-import type {FC} from 'react'
-import type {IPortfolioData} from '../model/types'
-import {IoMdPlanet} from 'react-icons/io'
+import type { FC } from 'react'
+import type { IPortfolioData } from '../model/types'
+import { IoMdPlanet } from 'react-icons/io'
 
 const PortfolioItem: FC<IPortfolioData> = ({
 	url,

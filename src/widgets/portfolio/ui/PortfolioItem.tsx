@@ -12,7 +12,7 @@ const PortfolioItem: FC<IPortfolioData> = ({
 	const isYoutubeUrl = url.includes('www.youtube.com')
 
 	return (
-		<div className='bg-gray-200 dark:bg-gray-600 p-6 md:p-10 lg:p-12 rounded-3xl w-full flex flex-col md:flex-row lg:flex-row gap-6 md:gap-8 lg:gap-10 items-center lg:items-start'>
+		<div className='bg-gray-200 dark:bg-gray-600 p-6 md:p-10 lg:p-12 rounded-3xl w-full h-full flex flex-col md:flex-row lg:flex-row gap-6 md:gap-8 lg:gap-10 items-center lg:items-start'>
 			{isYoutubeUrl ? (
 				<iframe
 					src={urlIframe}
@@ -21,12 +21,14 @@ const PortfolioItem: FC<IPortfolioData> = ({
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 					referrerPolicy='strict-origin-when-cross-origin'
 					allowFullScreen
-					className='rounded-2xl border-none outline-none flex-1 w-full max-w-full md:max-w-lg lg:max-w-xl h-64 md:h-80 lg:h-96 aspect-video'
+					className='rounded-3xl border-none outline-none flex-1 w-full max-w-full md:max-w-lg lg:max-w-xl h-64 md:h-80 lg:h-96 aspect-video'
+					loading='lazy'
 				/>
 			) : (
 				<img
 					src={image}
-					alt='Content image'
+					alt={title}
+					loading='lazy'
 					className='rounded-3xl object-cover flex-1 w-full max-w-full md:max-w-lg lg:max-w-xl h-64 md:h-80 lg:h-96 aspect-video'
 				/>
 			)}
@@ -43,7 +45,7 @@ const PortfolioItem: FC<IPortfolioData> = ({
 					{title}
 				</h5>
 				<p className='font-mono text-sm md:text-md lg:text-lg font-medium'>
-					{description.slice(0, 499)}...
+					{description}
 				</p>
 			</div>
 		</div>

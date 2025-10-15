@@ -2,14 +2,9 @@ import { Container } from '../../../shared/ui/container'
 import { Subtitle } from '../../../shared/ui/subtitle'
 import { Title } from '../../../shared/ui/title'
 import { useScroll } from '../../../shared/scroll'
-import {
-	FaGithub,
-	FaGithubSquare,
-	FaInstagram,
-	FaTelegram
-} from 'react-icons/fa'
 import Form from './Form'
 import photo from '../assets/images/photo.png'
+import { Social } from '../../../shared/ui/social'
 
 export const Contact = () => {
 	const { refs } = useScroll()
@@ -23,6 +18,8 @@ export const Contact = () => {
 					className='w-full h-[600px] lg:w-[400px] lg:h-[600px] object-cover rounded-2xl
 						sm:mx-0 mx-auto
 						shadow-lg max-w-full'
+					draggable={false}
+					loading='lazy'
 				/>
 				<div className='w-full'>
 					<Subtitle>Контакты</Subtitle>
@@ -32,32 +29,7 @@ export const Contact = () => {
 					<p className='text-md font-semibold mt-4'>
 						Любым удобным для вас способом:
 					</p>
-					<div className='flex gap-3 mt-2.5'>
-						<a
-							rel='stylesheet'
-							href='https://github.com/Kurbre'
-							target='_blank'
-						>
-							<FaGithub size={30} />
-						</a>
-						<a
-							rel='stylesheet'
-							href='https://github.com/Marald12'
-							target='_blank'
-						>
-							<FaGithubSquare size={30} />
-						</a>
-						<a
-							rel='stylesheet'
-							href='https://instagram.com/illiya_zmey'
-							target='_blank'
-						>
-							<FaInstagram size={30} />
-						</a>
-						<a rel='stylesheet' href='https://t.me/illiya228' target='_blank'>
-							<FaTelegram size={30} />
-						</a>
-					</div>
+					<Social size={30} />
 					<p className='text-md font-semibold mt-4'>
 						Или оставьте ваши данные и я сама вам напишу:
 					</p>

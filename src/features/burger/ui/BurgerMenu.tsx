@@ -1,8 +1,9 @@
 import { forwardRef } from 'react'
 import type { IProps } from '../model/types'
 import { linksData } from '../model/data'
-import cn from 'classnames'
 import { type SectionsKeys, useScroll } from '../../../shared/scroll'
+import { Social } from '../../../shared/ui/social'
+import cn from 'classnames'
 
 const BurgerMenu = forwardRef<HTMLDivElement, IProps>(
 	({ isOpen, setIsOpen }, ref) => {
@@ -28,7 +29,7 @@ const BurgerMenu = forwardRef<HTMLDivElement, IProps>(
 					onClick={e => e.stopPropagation()}
 					className={cn(
 						'absolute right-0 top-0 bottom-0 min-w-[250px] p-6 shadow-lg transition-transform duration-300 cursor-auto',
-						'bg-gray-100 dark:bg-gray-700',
+						'bg-gray-100 dark:bg-gray-700 flex flex-col justify-between',
 						isOpen ? 'translate-x-0' : 'translate-x-full'
 					)}
 				>
@@ -44,6 +45,7 @@ const BurgerMenu = forwardRef<HTMLDivElement, IProps>(
 							</li>
 						))}
 					</ul>
+					<Social size={30} className='justify-center' />
 				</div>
 			</div>
 		)

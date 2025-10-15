@@ -1,9 +1,3 @@
-import {
-	FaGithub,
-	FaGithubSquare,
-	FaInstagram,
-	FaTelegram
-} from 'react-icons/fa'
 import { Container } from '../../../shared/ui/container'
 import { Subtitle } from '../../../shared/ui/subtitle'
 import { ToggleTheme } from '../../../features/toggle-theme'
@@ -11,6 +5,7 @@ import { Button } from '../../../shared/ui/button'
 import { Burger } from '../../../features/burger'
 import background from '../assets/images/background.png'
 import { useScroll } from '../../../shared/scroll'
+import { Social } from '../../../shared/ui/social'
 
 const Header = () => {
 	const { scrollToComponent } = useScroll()
@@ -25,22 +20,7 @@ const Header = () => {
 			<div className='rotate-270 font-sans font-semibold text-lg flex items-center gap-3 -ml-32 md:-ml-21'>
 				<span className='whitespace-nowrap'>Социальные сети</span>
 				<div className='w-10 h-[2px] bg-black dark:bg-white' />
-				<a rel='stylesheet' href='https://github.com/Kurbre' target='_blank'>
-					<FaGithub size={21} />
-				</a>
-				<a rel='stylesheet' href='https://github.com/Marald12' target='_blank'>
-					<FaGithubSquare size={21} />
-				</a>
-				<a
-					rel='stylesheet'
-					href='https://instagram.com/illiya_zmey'
-					target='_blank'
-				>
-					<FaInstagram size={21} />
-				</a>
-				<a rel='stylesheet' href='https://t.me/illiya228' target='_blank'>
-					<FaTelegram size={21} />
-				</a>
+				<Social size={21} />
 			</div>
 			<Container className='flex items-center justify-between gap-5 h-full -ml-36 xl:ml-56'>
 				<div className='z-10'>
@@ -66,6 +46,8 @@ const Header = () => {
 						src={background}
 						alt='Background'
 						className='w-auto lg:h-[774px] md:h-[574px] sm:h-[474px] h-[374px] bg-no-repeat bg-bottom bg-cover z-[1]'
+						draggable={false}
+						loading='lazy'
 					/>
 				</div>
 			</Container>

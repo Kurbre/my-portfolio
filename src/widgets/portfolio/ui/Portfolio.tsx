@@ -2,21 +2,24 @@ import { Subtitle } from '../../../shared/ui/subtitle'
 import { Container } from '../../../shared/ui/container'
 import { Title } from '../../../shared/ui/title'
 import { useScroll } from '../../../shared/scroll'
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
-import Slider from 'react-slick'
 import PortfolioItem from './PortfolioItem'
-import { useRef } from 'react'
 import { usePortfolio } from '../model/hooks/usePortfolio'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination } from 'swiper/modules'
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import cn from 'classnames'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 const Portfolio = () => {
 	const { refs } = useScroll()
-	const sliderRef = useRef<Slider>(null)
 
 	const portfolio = usePortfolio()
 
 	const paginationSliderButtonStyle = `rounded-full bg-gradient-to-tr from-amber-500 to-amber-300 
-						dark:from-gray-700 dark:to-gray-500 p-3 cursor-pointer duration-300 
-					ease-in-out shadow-md hover:shadow-lg hover:scale-105 hover:brightness-110 hidden xl:block`
+    dark:from-gray-700 dark:to-gray-500 p-3 cursor-pointer duration-300 
+    ease-in-out shadow-md hover:shadow-lg hover:scale-105 hover:brightness-110 hidden md:block absolute`
 
 	return (
 		<section ref={refs.portfolio}>
@@ -29,31 +32,42 @@ const Portfolio = () => {
 						Мои работы и пет-проекты
 					</Title>
 				</div>
-				<div className='mt-12 relative w-full'>
+				<div className='mt-6 relative md:px-[60px]'>
 					<button
-						className={`absolute -left-20 top-1/2 ${paginationSliderButtonStyle}`}
-						onClick={() => sliderRef?.current?.slickPrev()}
+						className={cn(
+							paginationSliderButtonStyle,
+							'slider-button-prev left-0 top-1/2 z-20'
+						)}
 					>
 						<FaArrowLeft size={24} />
 					</button>
-					<Slider
-						dots={true}
-						infinite={true}
-						speed={700}
-						slidesToShow={1}
-						slidesToScroll={1}
-						arrows={false}
-						ref={sliderRef}
-						adaptiveHeight={true}
-					>
-						{portfolio.length > 0 &&
-							portfolio.map(item => (
-								<PortfolioItem key={item.id + item.url} {...item} />
+					<div className='w-full'>
+						<Swiper
+							modules={[Navigation, Pagination]}
+							spaceBetween={20}
+							slidesPerView={1}
+							speed={700}
+							pagination={{ el: '.slider__pagination', clickable: true }}
+							loop={true}
+							autoHeight={true}
+							navigation={{
+								nextEl: '.slider-button-next',
+								prevEl: '.slider-button-prev'
+							}}
+						>
+							{portfolio.map(item => (
+								<SwiperSlide key={item.id + item.url}>
+									<PortfolioItem {...item} />
+								</SwiperSlide>
 							))}
-					</Slider>
+						</Swiper>
+						<div className='slider__pagination flex justify-center mt-3' />
+					</div>
 					<button
-						className={`absolute -right-20 top-1/2 ${paginationSliderButtonStyle}`}
-						onClick={() => sliderRef?.current?.slickNext()}
+						className={cn(
+							paginationSliderButtonStyle,
+							'slider-button-next right-0 top-1/2 z-20'
+						)}
 					>
 						<FaArrowRight size={24} />
 					</button>

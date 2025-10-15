@@ -1,4 +1,8 @@
-import type { DetailedHTMLProps, PropsWithChildren, TextareaHTMLAttributes } from 'react'
+import type {
+	DetailedHTMLProps,
+	PropsWithChildren,
+	TextareaHTMLAttributes
+} from 'react'
 
 export interface ITextarea
 	extends DetailedHTMLProps<

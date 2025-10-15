@@ -23,12 +23,14 @@ const PortfolioItem: FC<IPortfolioData> = ({
 					allowFullScreen
 					className='rounded-3xl border-none outline-none flex-1 w-full max-w-full md:max-w-lg lg:max-w-xl h-64 md:h-80 lg:h-96 aspect-video'
 					loading='lazy'
+					draggable={false}
 				/>
 			) : (
 				<img
 					src={image}
 					alt={title}
 					loading='lazy'
+					draggable={false}
 					className='rounded-3xl object-cover flex-1 w-full max-w-full md:max-w-lg lg:max-w-xl h-64 md:h-80 lg:h-96 aspect-video'
 				/>
 			)}

@@ -18,6 +18,8 @@ const About = () => {
 						className='w-[400px] h-[320px] object-cover rounded-2xl
 						sm:mx-0 mx-auto
 						shadow-lg md:w-[350px] md:h-[520px] sm:w-[300px] sm:h-[450px] max-w-full'
+						draggable={false}
+						loading='lazy'
 					/>
 					<div>
 						<Subtitle>Обо мне</Subtitle>

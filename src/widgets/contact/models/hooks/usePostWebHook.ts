@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { IFormData } from '../schema'
 import axios, { type AxiosError } from 'axios'
-import type { ResponseTelegramError } from '../types.ts'
+import type { ResponseTelegramError } from '../types'
 
 export const usePostWebHook = () => {
 	const [isLoading, setIsLoading] = useState<boolean>(false)

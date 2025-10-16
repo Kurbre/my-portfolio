@@ -39,6 +39,7 @@ const PortfolioItem: FC<IPortfolioData> = ({
 				<a
 					href={url}
 					className='absolute right-0 -top-7 text-blue-500 flex items-center gap-2 mt-2'
+					target='_blank'
 				>
 					<IoMdPlanet size={16} className='mt-1' />
 					Перейти на сайт

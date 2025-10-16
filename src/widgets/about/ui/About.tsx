@@ -39,13 +39,19 @@ const About = () => {
 							delay={1.5}
 						>
 							<p className='font-mono mt-6'>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation ullamco laboris
-								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-								in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-								nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-								sunt in culpa qui officia deserunt mollit anim id est laborum
+								Меня зовут Илья, я full-stack разработчик из Украины. В IT уже 2
+								года: год активно работал на фрилансе и 7 месяцев занимался
+								коммерческой разработкой. Создавал и поддерживал веб-приложения,
+								работал с фронтендом и бэкендом, взаимодействовал с заказчиками
+								и командой. Постоянно изучаю новые технологии и развиваюсь
+								профессионально. Параллельно я учусь на факультете разработки
+								программного обеспечения. Это помогает системно укреплять знания
+								и сочетать практику с фундаментом. Помимо IT, я являюсь
+								действующим спортсменом по тайскому боксу. Многолетние
+								тренировки привили мне дисциплину, выносливость и умение
+								работать на результат. Я пунктуальный, общительный и спокойный в
+								коммуникации человек. Умею слушать, уважать мнение других и
+								соблюдать договоренности.
 							</p>
 						</ScrollFadeInCenter>
 						<ScrollFadeInCenter

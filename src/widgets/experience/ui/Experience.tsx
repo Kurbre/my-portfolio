@@ -6,6 +6,7 @@ import ExperienceItem from './ExperienceItem'
 import { PiStudent } from 'react-icons/pi'
 import { useScroll } from '../../../shared/scroll'
 import { ScrollFadeInCenter } from '../../../shared/animation'
+import { HiMiniComputerDesktop } from 'react-icons/hi2'
 
 const Experience = () => {
 	const { refs } = useScroll()
@@ -27,37 +28,29 @@ const Experience = () => {
 							<ExperienceItem
 								title='Студент "ЗЕФК"'
 								subtitle='Разроботка программного обеспечения'
-								description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit
-				amet, consectetur adipiscing elit, sed do eiusmo.'
+								description='Я учусь на факультете разработки программного обеспечения, изучаю современные технологии и методологии разработки, чтобы создавать качественные и эффективные веб-приложения. Постоянно развиваю навыки программирования и работаю над практическими проектами.'
 								icon={<PiStudent size={28} />}
 							/>
 							<ExperienceItem
-								title='Студент "ЗЕФК"'
-								subtitle='Разроботка программного обеспечения'
-								description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit
-				amet, consectetur adipiscing elit, sed do eiusmo.'
-								icon={<PiStudent size={28} />}
+								title='IT - навыки'
+								subtitle='Самообразование'
+								description='Я активно занимаюсь самообразованием в IT: изучаю новые технологии, фреймворки и инструменты, слежу за трендами веб-разработки и реализую собственные проекты, чтобы прокачивать навыки и практический опыт.'
+								icon={<HiMiniComputerDesktop size={28} />}
 							/>
 						</ExperienceColumn>
 					</ScrollFadeInCenter>
 					<ScrollFadeInCenter initialPosition='right' initialDistance={250}>
 						<ExperienceColumn>
 							<ExperienceItem
-								title='Студент "ЗЕФК"'
-								subtitle='Разроботка программного обеспечения'
-								description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit
-				amet, consectetur adipiscing elit, sed do eiusmo.'
+								title='Freecourses'
+								subtitle='7 месяцев'
+								description='Я работал в компании FreeCourses, где участвовал в разработке и поддержке веб-приложений, создавал интерфейсы и интегрировал бэкенд через API. Получил опыт командной работы, взаимодействия с заказчиками и соблюдения сроков проектов.'
 								icon={<PiStudent size={28} />}
 							/>
 							<ExperienceItem
-								title='Студент "ЗЕФК"'
-								subtitle='Разроботка программного обеспечения'
-								description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit
-				amet, consectetur adipiscing elit, sed do eiusmo.'
+								title='Freelance'
+								subtitle='1 год'
+								description='Я год работал на фрилансе, выполнял заказы по созданию и поддержке веб-приложений, общался с клиентами и управлял проектами самостоятельно. Этот опыт помог развить ответственность, умение планировать задачи и писать качественный код.'
 								icon={<PiStudent size={28} />}
 							/>
 						</ExperienceColumn>

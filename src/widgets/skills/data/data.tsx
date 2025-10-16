@@ -11,8 +11,7 @@ import {
 } from 'react-icons/si'
 import { RiNextjsFill, RiTailwindCssFill } from 'react-icons/ri'
 import { IoLogoReact } from 'react-icons/io5'
-import { TbApi, TbBrandRedux } from 'react-icons/tb'
-import { MdArchitecture } from 'react-icons/md'
+import { TbApi, TbBrandRedux, TbLetterF } from 'react-icons/tb'
 import { GrGraphQl } from 'react-icons/gr'
 import { DiMongodb } from 'react-icons/di'
 import { BiLogoPostgresql } from 'react-icons/bi'
@@ -51,8 +50,8 @@ export const skillsData: ISkillsItemProps[] = [
 		title: 'Shadcn/ui'
 	},
 	{
-		icon: <MdArchitecture size={1} />,
-		title: 'Feature-Sliced Design'
+		icon: <TbLetterF size={51} />,
+		title: 'FSD'
 	},
 	{
 		icon: <SiSass size={51} />,

@@ -7,13 +7,13 @@ export const skillsData = [
 		icon: <RiComputerLine size={28} />,
 		title: 'Front-end разработка',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+			'Это разработка пользовательского интерфейса сайтов и веб-приложений с упором на визуальную часть.'
 	},
 	{
 		id: Math.random() + Date.now(),
 		icon: <FaServer size={21} />,
 		title: 'Back-end разработка',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+			'Это разработка серверной части приложений, работа с базами данных, логикой и API для обеспечения корректной работы веб-приложений.'
 	}
 ]

@@ -8,7 +8,7 @@ body {
 
 @layer base {
     * {
-        @apply transition duration-500 ease-in-out dark:text-white;
+        @apply transition-colors duration-500 ease-in-out dark:text-white;
     }
 
     body {
@@ -16,7 +16,7 @@ body {
     }
 
     main {
-        @apply mb-22;
+        @apply mb-22 overflow-x-hidden;
     }
 
     section {

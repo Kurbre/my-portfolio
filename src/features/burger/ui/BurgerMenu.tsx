@@ -38,7 +38,7 @@ const BurgerMenu = forwardRef<HTMLDivElement, IProps>(
 							<li
 								key={href + label + i}
 								className='uppercase font-bold font-mono text-2xl hover:scale-105 hover:opacity-80
-								duration-300 cursor-pointer'
+								duration-300 cursor-pointer transition'
 								onClick={() => clickHandler(href)}
 							>
 								{label}

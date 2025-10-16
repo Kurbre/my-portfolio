@@ -44,7 +44,7 @@ const Form = () => {
 			>
 				Ваше сообщение
 			</Textarea>
-			<Button className='mt-7' disabled={isLoading}>
+			<Button className='mt-7 flex mx-auto sm:mx-0' disabled={isLoading}>
 				Отправить сообщение
 			</Button>
 		</form>

@@ -4,6 +4,7 @@ import { Title } from '../../../shared/ui/title'
 import { skillsData } from '../model/data'
 import photoOne from '../assets/images/photo1.png'
 import { useScroll } from '../../../shared/scroll'
+import { ScrollFadeInCenter } from '../../../shared/animation'
 
 const About = () => {
 	const { refs } = useScroll()
@@ -22,30 +23,50 @@ const About = () => {
 						loading='lazy'
 					/>
 					<div>
-						<Subtitle>Обо мне</Subtitle>
-						<Title position='left'>Меня зовут Илья</Title>
-						<p className='font-mono mt-6'>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat
-							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-							sunt in culpa qui officia deserunt mollit anim id est laborum
-						</p>
-						<div className='flex-wrap gap-1 mt-10 lg:flex hidden'>
-							{skillsData.map(item => (
-								<div className='flex gap-5 max-w-[250px]' key={item.id}>
-									<Subtitle className='top-2 left-2'>{item.icon}</Subtitle>
-									<div className='flex flex-col gap-1.5'>
-										<h5 className='font-sans font-bold text-xl'>
-											{item.title}
-										</h5>
-										<p className='text-sm font-sans'>{item.description}</p>
+						<ScrollFadeInCenter initialPosition='right'>
+							<Subtitle>Обо мне</Subtitle>
+						</ScrollFadeInCenter>
+						<ScrollFadeInCenter
+							initialPosition='right'
+							initialDistance={350}
+							delay={0.8}
+						>
+							<Title position='left'>Меня зовут Илья</Title>
+						</ScrollFadeInCenter>
+						<ScrollFadeInCenter
+							initialPosition='right'
+							initialDistance={350}
+							delay={1.5}
+						>
+							<p className='font-mono mt-6'>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+								enim ad minim veniam, quis nostrud exercitation ullamco laboris
+								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+								in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+								nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+								sunt in culpa qui officia deserunt mollit anim id est laborum
+							</p>
+						</ScrollFadeInCenter>
+						<ScrollFadeInCenter
+							initialPosition='right'
+							initialDistance={350}
+							delay={1.5}
+						>
+							<div className='flex-wrap gap-1 mt-10 lg:flex hidden'>
+								{skillsData.map(item => (
+									<div className='flex gap-5 max-w-[250px]' key={item.id}>
+										<Subtitle className='top-2 left-2'>{item.icon}</Subtitle>
+										<div className='flex flex-col gap-1.5'>
+											<h5 className='font-sans font-bold text-xl'>
+												{item.title}
+											</h5>
+											<p className='text-sm font-sans'>{item.description}</p>
+										</div>
 									</div>
-								</div>
-							))}
-						</div>
+								))}
+							</div>
+						</ScrollFadeInCenter>
 					</div>
 				</div>
 				<div className='flex-wrap gap-1 mt-10 lg:hidden flex'>

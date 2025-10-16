@@ -6,6 +6,7 @@ import { Burger } from '../../../features/burger'
 import background from '../assets/images/background.png'
 import { useScroll } from '../../../shared/scroll'
 import { Social } from '../../../shared/ui/social'
+import { FadeIn } from '../../../shared/animation'
 
 const Header = () => {
 	const { scrollToComponent } = useScroll()
@@ -24,22 +25,28 @@ const Header = () => {
 			</div>
 			<Container className='flex items-center justify-between gap-5 h-full -ml-36 xl:ml-56'>
 				<div className='z-10'>
-					<Subtitle>Меня зовут Илья</Subtitle>
-					<h2 className='text-5xl max-w-[480px] mb-4'>
-						Я web-разработчик из Украины
-					</h2>
-					<div className='flex gap-3'>
-						<Button onClick={() => scrollToComponent('portfolio')}>
-							Портфолио
-						</Button>
-						<Button
-							className='bg-none shadow-none hover:shadow-none'
-							onClick={() => scrollToComponent('about')}
-						>
-							Обо мне
-						</Button>
-					</div>
-					<ToggleTheme />
+					<FadeIn initialPosition='right' initialDistance={200} delay={0.5}>
+						<Subtitle>Меня зовут Илья</Subtitle>
+					</FadeIn>
+					<FadeIn initialPosition='left' initialDistance={200} delay={0.5}>
+						<h2 className='text-5xl max-w-[480px] mb-4'>
+							Я web-разработчик из Украины
+						</h2>
+					</FadeIn>
+					<FadeIn initialPosition='bottom' initialDistance={200} delay={0.5}>
+						<div className='flex gap-3'>
+							<Button onClick={() => scrollToComponent('portfolio')}>
+								Портфолио
+							</Button>
+							<Button
+								className='bg-none shadow-none hover:shadow-none'
+								onClick={() => scrollToComponent('about')}
+							>
+								Обо мне
+							</Button>
+						</div>
+						<ToggleTheme />
+					</FadeIn>
 				</div>
 				<div className='flex justify-end items-end absolute -right-10 md:right-28 -bottom-[65.5px] sm:-bottom-[82.5px] md:-bottom-[100px] lg:-bottom-[134.5px]'>
 					<img

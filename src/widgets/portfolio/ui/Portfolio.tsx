@@ -11,6 +11,7 @@ import cn from 'classnames'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import { ScrollFadeInCenter } from '../../../shared/animation'
 
 const Portfolio = () => {
 	const { refs } = useScroll()
@@ -19,18 +20,23 @@ const Portfolio = () => {
 
 	const paginationSliderButtonStyle = `rounded-full bg-gradient-to-tr from-amber-500 to-amber-300 
     dark:from-gray-700 dark:to-gray-500 p-3 cursor-pointer duration-300 
-    ease-in-out shadow-md hover:shadow-lg hover:scale-105 hover:brightness-110 hidden md:block absolute`
+    ease-in-out shadow-md hover:shadow-lg hover:scale-105 hover:brightness-110 hidden md:block 
+    absolute transition`
 
 	return (
 		<section ref={refs.portfolio}>
 			<Container>
 				<div className='flex items-center flex-col'>
-					<Subtitle position='center' className='-left-7'>
-						Портфолио
-					</Subtitle>
-					<Title position='center' className='mt-1 text-center'>
-						Мои работы и пет-проекты
-					</Title>
+					<ScrollFadeInCenter initialPosition='right' initialDistance={350}>
+						<Subtitle position='center' className='-left-7'>
+							Портфолио
+						</Subtitle>
+					</ScrollFadeInCenter>
+					<ScrollFadeInCenter initialPosition='left' initialDistance={350}>
+						<Title position='center' className='mt-1 text-center'>
+							Мои работы и пет-проекты
+						</Title>
+					</ScrollFadeInCenter>
 				</div>
 				<div className='mt-6 relative md:px-[60px]'>
 					<button

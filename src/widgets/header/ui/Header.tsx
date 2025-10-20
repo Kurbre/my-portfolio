@@ -19,30 +19,30 @@ const Header = () => {
 		>
 			<Burger />
 			<div className='rotate-270 font-sans font-semibold text-lg flex items-center gap-3 -ml-32 md:-ml-21'>
-				<span className='whitespace-nowrap'>Социальные сети</span>
+				<span className='whitespace-nowrap'>Соціальні мережі</span>
 				<div className='w-10 h-[2px] bg-black dark:bg-white' />
 				<Social size={21} />
 			</div>
 			<Container className='flex items-center justify-between gap-5 h-full -ml-36 xl:ml-56'>
 				<div className='z-10'>
 					<FadeIn initialPosition='right' initialDistance={200} delay={0.5}>
-						<Subtitle>Меня зовут Илья</Subtitle>
+						<Subtitle>Мене звати Ілля</Subtitle>
 					</FadeIn>
 					<FadeIn initialPosition='left' initialDistance={200} delay={0.5}>
 						<h2 className='text-5xl max-w-[480px] mb-4'>
-							Я web-разработчик из Украины
+							Я веб-розробник з України
 						</h2>
 					</FadeIn>
 					<FadeIn initialPosition='bottom' initialDistance={200} delay={0.5}>
 						<div className='flex gap-3'>
 							<Button onClick={() => scrollToComponent('portfolio')}>
-								Портфолио
+								Портфоліо
 							</Button>
 							<Button
 								className='bg-none shadow-none hover:shadow-none'
 								onClick={() => scrollToComponent('about')}
 							>
-								Обо мне
+								Про мене
 							</Button>
 						</div>
 						<ToggleTheme />

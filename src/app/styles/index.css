@@ -1,11 +1,11 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-	--font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
-	--font-body: "Outfit", ui-sans-serif, system-ui, sans-serif;
-	--font-mono: "Outfit", ui-sans-serif, system-ui, sans-serif;
+	--font-display: 'Syne', ui-sans-serif, system-ui, sans-serif;
+	--font-body: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'Outfit', ui-sans-serif, system-ui, sans-serif;
 	--color-neon: #00c2ff;
 	--color-neon-dim: #0099cc;
 	--color-surface: #0b0e14;
@@ -13,6 +13,17 @@
 
 body {
 	@apply w-full overflow-x-hidden font-body antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 @layer base {
@@ -25,7 +36,7 @@ body {
 	}
 
 	main {
-		@apply mb-22 overflow-x-hidden relative;
+		@apply overflow-x-hidden relative;
 	}
 
 	section {

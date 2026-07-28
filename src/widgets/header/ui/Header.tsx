@@ -69,10 +69,10 @@ const Header = () => {
 					</FadeIn>
 				</div>
 				<motion.div
-					initial={{ opacity: 0, x: 60 }}
+					initial={{ opacity: 0, x: 24 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-					className='flex justify-end items-end absolute -right-10 md:right-28 -bottom-[65.5px] sm:-bottom-[82.5px] md:-bottom-[100px] lg:-bottom-[134.5px]'
+					className='flex justify-end items-end absolute -right-10 md:right-28 -bottom-[65.5px] sm:-bottom-[82.5px] md:-bottom-[100px] lg:-bottom-[134.5px] max-md:opacity-90'
 				>
 					<img
 						src={background}

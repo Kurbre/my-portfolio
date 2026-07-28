@@ -1,11 +1,15 @@
 import type { ISkillsItemProps } from './types'
 import {
+	SiDocker,
+	SiLinux,
 	SiNestjs,
 	SiPrisma,
 	SiReacthookform,
 	SiReactquery,
+	SiRedis,
 	SiSass,
 	SiShadcnui,
+	SiSocketdotio,
 	SiTypeorm,
 	SiTypescript
 } from 'react-icons/si'
@@ -15,6 +19,7 @@ import { TbApi, TbBrandRedux, TbLetterF } from 'react-icons/tb'
 import { GrGraphQl } from 'react-icons/gr'
 import { DiMongodb } from 'react-icons/di'
 import { BiLogoPostgresql } from 'react-icons/bi'
+import { MdQueue } from 'react-icons/md'
 
 export const skillsData: ISkillsItemProps[] = [
 	{
@@ -84,5 +89,25 @@ export const skillsData: ISkillsItemProps[] = [
 	{
 		icon: <SiTypeorm size={51} />,
 		title: 'TypeORM'
+	},
+	{
+		icon: <SiDocker size={51} />,
+		title: 'Docker'
+	},
+	{
+		icon: <MdQueue size={51} />,
+		title: 'Bull MQ'
+	},
+	{
+		icon: <SiLinux size={51} />,
+		title: 'Linux'
+	},
+	{
+		icon: <SiSocketdotio size={51} />,
+		title: 'Socket.io'
+	},
+	{
+		icon: <SiRedis size={51} />,
+		title: 'Redis'
 	}
 ]

@@ -3,14 +3,14 @@ import { FaServer } from 'react-icons/fa'
 
 export const skillsData = [
 	{
-		id: Math.random() + Date.now(),
+		id: 'frontend',
 		icon: <RiComputerLine size={28} />,
 		title: 'Front-end розробка',
 		description:
 			'Це розробка користувацького інтерфейсу сайтів і веб-додатків із акцентом на візуальну частину.'
 	},
 	{
-		id: Math.random() + Date.now(),
+		id: 'backend',
 		icon: <FaServer size={21} />,
 		title: 'Back-end розробка',
 		description:

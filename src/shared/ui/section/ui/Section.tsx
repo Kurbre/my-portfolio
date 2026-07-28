@@ -14,7 +14,7 @@ const Section = forwardRef<HTMLDivElement, ISectionProps>(
 			<section
 				ref={ref}
 				className={cn(
-					'relative overflow-hidden pt-16 md:pt-28 pb-10',
+					'relative overflow-x-hidden pt-16 md:pt-28 pb-10',
 					'transition-[background-color] duration-700 ease-in-out',
 					isMuted
 						? 'bg-zinc-200/55 dark:bg-[#11161f]'

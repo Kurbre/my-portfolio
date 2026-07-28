@@ -1,5 +1,6 @@
 import { type FC, type PropsWithChildren } from 'react'
 import { motion } from 'framer-motion'
+import { useMotionSafe } from '../hooks/useMotionSafe'
 
 interface IStaggerContainerProps extends PropsWithChildren {
 	className?: string
@@ -13,18 +14,24 @@ const StaggerContainer: FC<IStaggerContainerProps> = ({
 	stagger = 0.08,
 	delayChildren = 0.1
 }) => {
+	const { isMobile, prefersReducedMotion, viewport } = useMotionSafe()
+
+	if (prefersReducedMotion) {
+		return <div className={className}>{children}</div>
+	}
+
 	return (
 		<motion.div
 			className={className}
 			initial='hidden'
 			whileInView='visible'
-			viewport={{ once: true, amount: 0.15 }}
+			viewport={viewport}
 			variants={{
 				hidden: {},
 				visible: {
 					transition: {
-						staggerChildren: stagger,
-						delayChildren
+						staggerChildren: isMobile ? Math.min(stagger, 0.04) : stagger,
+						delayChildren: isMobile ? Math.min(delayChildren, 0.05) : delayChildren
 					}
 				}
 			}}

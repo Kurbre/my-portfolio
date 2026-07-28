@@ -10,9 +10,10 @@ const ExperienceItem: FC<IExperienceItemsProps> = ({
 }) => {
 	return (
 		<motion.div
-			whileHover={{ y: -5, x: 4 }}
+			whileHover={{ y: -4 }}
+			whileTap={{ scale: 0.99 }}
 			transition={{ type: 'spring', stiffness: 320, damping: 20 }}
-			className='max-w-[375px] ml-10 sm:ml-21 mt-6 glass rounded-2xl p-5 glow-accent'
+			className='max-w-[375px] ml-10 sm:ml-21 mt-6 glass rounded-2xl p-5 glow-accent will-change-transform'
 		>
 			<div className='flex gap-4 items-center'>
 				<div className='relative shrink-0'>

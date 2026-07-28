@@ -39,8 +39,8 @@ const Skills = () => {
 					className='flex gap-5 flex-wrap justify-center mt-12'
 					stagger={0.06}
 				>
-					{skillsData.map(({ icon, title }) => (
-						<StaggerItem key={icon + title}>
+					{skillsData.map(({ icon, title }, index) => (
+						<StaggerItem key={title} index={index}>
 							<SkillsItem icon={icon} title={title} />
 						</StaggerItem>
 					))}

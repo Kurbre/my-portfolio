@@ -1,4 +1,10 @@
-import { FaGithub, FaGithubSquare, FaInstagram, FaTelegram } from 'react-icons/fa'
+import {
+	FaGithub,
+	FaGithubSquare,
+	FaInstagram,
+	FaLinkedin,
+	FaTelegram
+} from 'react-icons/fa'
 import type { FC } from 'react'
 import type { ISocial } from '../model/types'
 import cn from 'classnames'
@@ -6,9 +12,12 @@ import { motion } from 'framer-motion'
 
 const links = [
 	{ href: 'https://github.com/Kurbre', Icon: FaGithub },
-	{ href: 'https://github.com/Marald12', Icon: FaGithubSquare },
 	{ href: 'https://instagram.com/illiya_zmey', Icon: FaInstagram },
-	{ href: 'https://t.me/illiya228', Icon: FaTelegram }
+	{ href: 'https://t.me/illiya228', Icon: FaTelegram },
+	{
+		href: 'https://www.linkedin.com/in/%D0%B8%D0%BB%D1%8C%D1%8F-%D0%B7%D0%BC%D0%B5%D0%B9-5a7398215/',
+		Icon: FaLinkedin
+	}
 ]
 
 const Social: FC<ISocial> = ({ size = 18, className }) => {

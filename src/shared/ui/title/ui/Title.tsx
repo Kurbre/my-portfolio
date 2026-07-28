@@ -9,23 +9,25 @@ const Title: FC<IProps> = ({
 	...props
 }) => {
 	const positionLineStyles = {
-		left: 'w-14',
-		center: 'w-14 flex mx-auto',
-		right: 'w-14 absolute right-0'
+		left: 'w-16',
+		center: 'w-16 flex mx-auto',
+		right: 'w-16 absolute right-0'
 	}
 
 	return (
 		<div className='relative'>
 			<h1
-				className={cn('text-4xl font-mono font-extrabold', className)}
+				className={cn(
+					'text-3xl sm:text-4xl md:text-5xl font-display font-extrabold tracking-tight leading-tight',
+					className
+				)}
 				{...props}
 			>
 				{children}
 			</h1>
 			<div
 				className={cn(
-					`h-1 bg-gradient-to-br from-amber-500 to-amber-300 
-					dark:from-gray-600 dark:to-gray-500 mt-3`,
+					`h-1 rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 mt-4`,
 					positionLineStyles[position]
 				)}
 			/>

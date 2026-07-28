@@ -1,44 +1,64 @@
 import { Container } from '../../../shared/ui/container'
+import { Section } from '../../../shared/ui/section'
 import { Subtitle } from '../../../shared/ui/subtitle'
 import { Title } from '../../../shared/ui/title'
 import { skillsData } from '../model/data'
 import photoOne from '../assets/images/photo1.png'
 import { useScroll } from '../../../shared/scroll'
-import { ScrollFadeInCenter } from '../../../shared/animation'
+import {
+	ScrollFadeInCenter,
+	StaggerContainer,
+	StaggerItem
+} from '../../../shared/animation'
+import { motion } from 'framer-motion'
 
 const About = () => {
 	const { refs } = useScroll()
 
 	return (
-		<section className='dark:bg-gray-700' ref={refs.about}>
+		<Section ref={refs.about} tone='default'>
+			<div className='pointer-events-none absolute top-20 right-0 w-72 h-72 rounded-full bg-cyan-400/15 blur-3xl' />
+			<div className='pointer-events-none absolute bottom-10 left-10 w-64 h-64 rounded-full bg-blue-500/10 blur-3xl' />
+
 			<Container>
-				<div className='flex gap-5 flex-wrap sm:flex-nowrap'>
-					<img
-						src={photoOne}
-						alt='Photo section about'
-						className='w-[400px] h-[320px] object-cover rounded-2xl
-						sm:mx-0 mx-auto
-						shadow-lg md:w-[350px] md:h-[520px] sm:w-[300px] sm:h-[450px] max-w-full'
-						draggable={false}
-						loading='lazy'
-					/>
-					<div>
-						<ScrollFadeInCenter initialPosition='right'>
+				<div className='flex gap-8 flex-wrap sm:flex-nowrap items-start'>
+					<ScrollFadeInCenter initialPosition='left' initialDistance={48}>
+						<motion.div
+							whileHover={{ y: -6 }}
+							transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+							className='relative rounded-3xl overflow-hidden glass glow-accent p-1.5'
+						>
+							<img
+								src={photoOne}
+								alt='Photo section about'
+								className='w-[400px] h-[320px] object-cover rounded-[1.25rem]
+								sm:mx-0 mx-auto
+								md:w-[350px] md:h-[520px] sm:w-[300px] sm:h-[450px] max-w-full'
+								draggable={false}
+								loading='lazy'
+							/>
+						</motion.div>
+					</ScrollFadeInCenter>
+
+					<div className='min-w-0 flex-1'>
+						<ScrollFadeInCenter initialPosition='right' initialDistance={40}>
 							<Subtitle>Про мене</Subtitle>
 						</ScrollFadeInCenter>
 						<ScrollFadeInCenter
 							initialPosition='right'
-							initialDistance={350}
-							delay={0.8}
+							initialDistance={40}
+							delay={0.12}
 						>
-							<Title position='left'>Мене звати Ілля</Title>
+							<Title position='left' className='mt-2'>
+								Мене звати Ілля
+							</Title>
 						</ScrollFadeInCenter>
 						<ScrollFadeInCenter
 							initialPosition='right'
-							initialDistance={350}
-							delay={1.5}
+							initialDistance={40}
+							delay={0.2}
 						>
-							<p className='font-mono mt-6'>
+							<p className='font-body mt-6 text-zinc-600 dark:text-zinc-300 leading-relaxed tracking-tight'>
 								Мене звати Ілля, я full-stack розробник з України. В IT уже 3
 								роки: рік активно працював на фрілансі та 2+ роки займався
 								комерційною розробкою. Створював і підтримував веб-додатки,
@@ -54,40 +74,56 @@ const About = () => {
 								домовленостей.
 							</p>
 						</ScrollFadeInCenter>
-						<ScrollFadeInCenter
-							initialPosition='right'
-							initialDistance={350}
-							delay={1.5}
-						>
-							<div className='flex-wrap gap-1 mt-10 lg:flex hidden'>
-								{skillsData.map(item => (
-									<div className='flex gap-5 max-w-[250px]' key={item.id}>
-										<Subtitle className='top-2 left-2'>{item.icon}</Subtitle>
+
+						<StaggerContainer className='flex-wrap gap-4 mt-10 lg:flex hidden'>
+							{skillsData.map(item => (
+								<StaggerItem key={item.id}>
+									<motion.div
+										whileHover={{ y: -5 }}
+										className='flex gap-4 max-w-[280px] glass rounded-2xl p-4 glow-accent'
+									>
+										<div className='shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-400 via-sky-400 to-blue-500 flex items-center justify-center text-white shadow-lg shadow-cyan-400/30'>
+											{item.icon}
+										</div>
 										<div className='flex flex-col gap-1.5'>
-											<h5 className='font-sans font-bold text-xl'>
+											<h5 className='font-display font-bold text-lg tracking-tight'>
 												{item.title}
 											</h5>
-											<p className='text-sm font-sans'>{item.description}</p>
+											<p className='text-sm font-body text-zinc-600 dark:text-zinc-400'>
+												{item.description}
+											</p>
 										</div>
-									</div>
-								))}
-							</div>
-						</ScrollFadeInCenter>
+									</motion.div>
+								</StaggerItem>
+							))}
+						</StaggerContainer>
 					</div>
 				</div>
-				<div className='flex-wrap gap-1 mt-10 lg:hidden flex'>
+
+				<StaggerContainer className='flex-wrap gap-4 mt-10 lg:hidden flex'>
 					{skillsData.map(item => (
-						<div className='flex gap-5 max-w-[250px]' key={item.id}>
-							<Subtitle className='top-2 left-2'>{item.icon}</Subtitle>
-							<div className='flex flex-col gap-1.5'>
-								<h5 className='font-sans font-bold text-xl'>{item.title}</h5>
-								<p className='text-sm font-sans'>{item.description}</p>
-							</div>
-						</div>
+						<StaggerItem key={item.id}>
+							<motion.div
+								whileHover={{ y: -5 }}
+								className='flex gap-4 max-w-[280px] glass rounded-2xl p-4 glow-accent'
+							>
+								<div className='shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-400 via-sky-400 to-blue-500 flex items-center justify-center text-white shadow-lg shadow-cyan-400/30'>
+									{item.icon}
+								</div>
+								<div className='flex flex-col gap-1.5'>
+									<h5 className='font-display font-bold text-lg tracking-tight'>
+										{item.title}
+									</h5>
+									<p className='text-sm font-body text-zinc-600 dark:text-zinc-400'>
+										{item.description}
+									</p>
+								</div>
+							</motion.div>
+						</StaggerItem>
 					))}
-				</div>
+				</StaggerContainer>
 			</Container>
-		</section>
+		</Section>
 	)
 }
 

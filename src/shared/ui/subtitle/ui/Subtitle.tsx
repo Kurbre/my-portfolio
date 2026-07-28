@@ -9,11 +9,11 @@ const Subtitle: FC<IProps> = ({
 	...props
 }) => {
 	return (
-		<div className='relative'>
-			<div className='w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 to-amber-300 dark:from-gray-700 dark:to-gray-500' />
+		<div className='relative inline-flex items-center'>
+			<div className='w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-400 via-sky-400 to-blue-500 opacity-90 shadow-lg shadow-cyan-400/40' />
 			<span
 				className={cn(
-					'font-bold text-lg font-mono absolute whitespace-nowrap',
+					'font-display font-bold text-lg tracking-tight absolute whitespace-nowrap',
 					position === 'center' ? '-left-0.5 top-0.5' : 'left-3 top-0.5',
 					className
 				)}

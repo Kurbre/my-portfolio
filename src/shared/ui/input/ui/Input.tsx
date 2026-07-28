@@ -10,7 +10,8 @@ const Input = forwardRef<HTMLInputElement, IInput>(
 			<div className='relative w-full'>
 				<label
 					htmlFor={id}
-					className='absolute -top-3.5 left-3.5 bg-white dark:bg-gray-700 px-2 whitespace-nowrap'
+					className='absolute -top-3 left-3.5 z-10 px-2 whitespace-nowrap text-sm font-medium
+					bg-white dark:bg-zinc-900 tracking-tight'
 				>
 					{children}
 				</label>
@@ -18,14 +19,18 @@ const Input = forwardRef<HTMLInputElement, IInput>(
 					type='text'
 					id={id}
 					className={cn(
-						'border-black dark:border-white border px-2.5 lg:px-5 py-3.5 flex items-center outline-none w-full',
+						`glass rounded-xl px-2.5 lg:px-5 py-3.5 flex items-center outline-none w-full
+						focus:border-cyan-400/60 focus:ring-2 focus:ring-cyan-400/25
+						placeholder:text-zinc-400 dark:placeholder:text-zinc-500`,
 						className
 					)}
 					ref={ref}
 					{...props}
 				/>
 				{error && (
-					<span className='dark:text-red-500 text-red-700'>{error}</span>
+					<span className='text-sm mt-1 block text-red-600 dark:text-red-400'>
+						{error}
+					</span>
 				)}
 			</div>
 		)

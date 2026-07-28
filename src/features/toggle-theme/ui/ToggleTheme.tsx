@@ -2,6 +2,7 @@ import { useTheme } from '../../../shared/theme'
 import { MdLightMode, MdOutlineDarkMode } from 'react-icons/md'
 import cn from 'classnames'
 import { type JSX, useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
 const ToggleTheme = () => {
 	const { toggleTheme, isDarkTheme } = useTheme()
@@ -26,21 +27,25 @@ const ToggleTheme = () => {
 	}, [isDarkTheme])
 
 	return (
-		<div
-			className='dark:text-white text-black cursor-pointer w-[80px] h-10 border border-gray-700
-			rounded-full flex flex-items p-1 mt-3'
+		<motion.div
+			className='dark:text-white text-black cursor-pointer w-[80px] h-10
+			rounded-full flex items-center p-1 mt-4 glass glow-accent'
 			onClick={toggleTheme}
+			whileTap={{ scale: 0.95 }}
+			role='button'
+			aria-label='Toggle theme'
 		>
-			<div
+			<motion.div
+				layout
 				className={cn(
-					'bg-white dark:bg-gray-700 w-8 flex items-center justify-center ' +
-						' rounded-full transition-transform duration-300 ease-in-out',
+					'bg-gradient-to-br from-cyan-400 via-sky-400 to-blue-500 text-white w-8 h-8 flex items-center justify-center rounded-full shadow-md',
 					isDarkTheme && 'translate-x-9'
 				)}
+				transition={{ type: 'spring', stiffness: 400, damping: 28 }}
 			>
 				{icon}
-			</div>
-		</div>
+			</motion.div>
+		</motion.div>
 	)
 }
 

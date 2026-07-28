@@ -2,38 +2,100 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+	--font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+	--font-body: "Outfit", ui-sans-serif, system-ui, sans-serif;
+	--font-mono: "Outfit", ui-sans-serif, system-ui, sans-serif;
+	--color-neon: #00c2ff;
+	--color-neon-dim: #0099cc;
+	--color-surface: #0b0e14;
+}
+
 body {
-    @apply w-full overflow-x-hidden;
+	@apply w-full overflow-x-hidden font-body antialiased;
 }
 
 @layer base {
-    * {
-        @apply transition-colors duration-500 ease-in-out dark:text-white;
-    }
+	* {
+		@apply transition-colors duration-500 ease-in-out dark:text-white;
+	}
 
-    body {
-        @apply dark:bg-gray-700;
-    }
+	body {
+		@apply bg-zinc-100 text-zinc-900 dark:bg-[#0b0e14] dark:text-white;
+	}
 
-    main {
-        @apply mb-22 overflow-x-hidden;
-    }
+	main {
+		@apply mb-22 overflow-x-hidden relative;
+	}
 
-    section {
-        @apply pt-16 md:pt-31;
-    }
+	section {
+		@apply relative;
+	}
 
-    .dark .slick-dots li button:before {
-        color: white !important;
-        opacity: 1;
-    }
+	.dark .slick-dots li button:before {
+		color: white !important;
+		opacity: 1;
+	}
 
-    .dark .slick-dots li.slick-active button:before {
-        color: white !important;
-        opacity: 1 !important;
-    }
+	.dark .slick-dots li.slick-active button:before {
+		color: white !important;
+		opacity: 1 !important;
+	}
 
-    .swiper-slide {
-        transition: transform 0.7s ease-in-out;
-    }
+	.swiper-slide {
+		transition: transform 0.7s ease-in-out;
+	}
+
+	.slider__pagination .swiper-pagination-bullet {
+		@apply !w-2.5 !h-2.5 !opacity-100 bg-zinc-500 dark:bg-zinc-400
+		shadow-[0_0_0_1px_rgba(255,255,255,0.15)] mx-1 cursor-pointer
+		transition-all duration-300;
+	}
+
+	.slider__pagination .swiper-pagination-bullet-active {
+		@apply !w-7 !rounded-full bg-cyan-400 dark:bg-cyan-400
+		shadow-[0_0_12px_rgba(0,194,255,0.65)];
+	}
+}
+
+@layer utilities {
+	.glass {
+		@apply bg-white/70 dark:bg-zinc-800/50 backdrop-blur-md border border-zinc-200/80 dark:border-white/10;
+	}
+
+	.glass-strong {
+		@apply bg-white/85 dark:bg-zinc-900/70 backdrop-blur-xl border border-zinc-200 dark:border-white/10;
+	}
+
+	.text-gradient {
+		@apply bg-gradient-to-r from-cyan-300 via-cyan-400 to-sky-500 bg-clip-text text-transparent;
+	}
+
+	.border-gradient {
+		@apply border border-transparent bg-origin-border;
+	}
+
+	.glow-accent {
+		box-shadow:
+			0 0 0 1px rgba(0, 194, 255, 0.12),
+			0 8px 32px rgba(0, 194, 255, 0.12);
+	}
+
+	.dark .glow-accent {
+		box-shadow:
+			0 0 0 1px rgba(0, 194, 255, 0.18),
+			0 0 24px rgba(0, 194, 255, 0.2),
+			0 8px 40px rgba(0, 194, 255, 0.15);
+	}
+
+	.rounded-3xl.glow-accent,
+	.rounded-2xl.glow-accent,
+	.rounded-xl.glow-accent {
+		overflow: hidden;
+		isolation: isolate;
+	}
+
+	.accent-gradient {
+		@apply bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500;
+	}
 }

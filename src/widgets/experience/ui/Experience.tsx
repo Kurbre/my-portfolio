@@ -1,4 +1,5 @@
 import { Container } from '../../../shared/ui/container'
+import { Section } from '../../../shared/ui/section'
 import { Subtitle } from '../../../shared/ui/subtitle'
 import { Title } from '../../../shared/ui/title'
 import ExperienceColumn from './ExperienceColumn'
@@ -12,18 +13,27 @@ const Experience = () => {
 	const { refs } = useScroll()
 
 	return (
-		<section className='dark:bg-gray-700' ref={refs.experience}>
+		<Section ref={refs.experience} tone='muted'>
+			<div className='pointer-events-none absolute top-24 left-0 w-80 h-80 rounded-full bg-cyan-400/10 blur-3xl' />
+			<div className='pointer-events-none absolute bottom-10 right-10 w-72 h-72 rounded-full bg-blue-500/10 blur-3xl' />
+
 			<Container>
 				<div className='flex items-center flex-col'>
-					<ScrollFadeInCenter initialPosition='top' initialDistance={150}>
+					<ScrollFadeInCenter initialPosition='top' initialDistance={32}>
 						<Subtitle position='center'>Досвід</Subtitle>
 					</ScrollFadeInCenter>
-					<ScrollFadeInCenter initialPosition='left' initialDistance={350}>
-						<Title className='text-center'>Досвід роботи та освіта</Title>
+					<ScrollFadeInCenter
+						initialPosition='left'
+						initialDistance={40}
+						delay={0.1}
+					>
+						<Title className='text-center mt-2'>
+							Досвід роботи та освіта
+						</Title>
 					</ScrollFadeInCenter>
 				</div>
-				<div className='flex mt-15 justify-between flex-wrap gap-10'>
-					<ScrollFadeInCenter initialPosition='left' initialDistance={250}>
+				<div className='flex mt-14 justify-between flex-wrap gap-10'>
+					<ScrollFadeInCenter initialPosition='left' initialDistance={48}>
 						<ExperienceColumn>
 							<ExperienceItem
 								title='Студент "ЗЕФК"'
@@ -39,7 +49,11 @@ const Experience = () => {
 							/>
 						</ExperienceColumn>
 					</ScrollFadeInCenter>
-					<ScrollFadeInCenter initialPosition='right' initialDistance={250}>
+					<ScrollFadeInCenter
+						initialPosition='right'
+						initialDistance={48}
+						delay={0.15}
+					>
 						<ExperienceColumn>
 							<ExperienceItem
 								title='Macroglide'
@@ -63,7 +77,7 @@ const Experience = () => {
 					</ScrollFadeInCenter>
 				</div>
 			</Container>
-		</section>
+		</Section>
 	)
 }
 

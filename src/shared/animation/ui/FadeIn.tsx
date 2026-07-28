@@ -5,9 +5,10 @@ import { animationParams } from '../model/params'
 
 const FadeIn: FC<IAnimation> = ({
 	children,
-	initialDistance = 150,
+	initialDistance = 40,
 	initialPosition,
-	delay = 0
+	delay = 0,
+	className
 }) => {
 	return (
 		<motion.div
@@ -16,8 +17,8 @@ const FadeIn: FC<IAnimation> = ({
 				...animationParams(initialDistance)[initialPosition]
 			}}
 			animate={{ x: 0, y: 0, opacity: 1 }}
-			transition={{ duration: 0.5, ease: 'easeOut', delay }}
-			className='z-10'
+			transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
+			className={className ?? 'z-10'}
 		>
 			{children}
 		</motion.div>

@@ -4,6 +4,7 @@ import { linksData } from '../model/data'
 import { type SectionsKeys, useScroll } from '../../../shared/scroll'
 import { Social } from '../../../shared/ui/social'
 import cn from 'classnames'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const BurgerMenu = forwardRef<HTMLDivElement, IProps>(
 	({ isOpen, setIsOpen }, ref) => {
@@ -15,39 +16,51 @@ const BurgerMenu = forwardRef<HTMLDivElement, IProps>(
 		}
 
 		return (
-			<div
-				className={cn(
-					'fixed inset-0 backdrop-blur-lg transition-all duration-300 cursor-pointer',
-					isOpen
-						? 'opacity-100 z-20 bg-black/20 dark:bg-black/40'
-						: 'opacity-0 pointer-events-none bg-transparent'
+			<AnimatePresence>
+				{isOpen && (
+					<motion.div
+						className='fixed inset-0 backdrop-blur-md z-40 cursor-pointer bg-black/30 dark:bg-black/50'
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						transition={{ duration: 0.25 }}
+						onClick={() => setIsOpen(false)}
+					>
+						<motion.div
+							ref={ref}
+							onClick={e => e.stopPropagation()}
+							initial={{ x: '100%' }}
+							animate={{ x: 0 }}
+							exit={{ x: '100%' }}
+							transition={{ type: 'spring', stiffness: 320, damping: 32 }}
+							className={cn(
+								'absolute right-0 top-0 bottom-0 min-w-[270px] p-6 cursor-auto',
+								'glass-strong flex flex-col justify-between shadow-2xl'
+							)}
+						>
+							<ul className='flex flex-col gap-4 list-none mt-10'>
+								{linksData.map(({ href, label }, i) => (
+									<motion.li
+										key={href + label + i}
+										initial={{ opacity: 0, x: 24 }}
+										animate={{ opacity: 1, x: 0 }}
+										transition={{ delay: 0.08 * i + 0.1 }}
+										whileHover={{ x: 6 }}
+										whileTap={{ scale: 0.97 }}
+										className='uppercase font-display font-bold text-2xl tracking-tight
+										cursor-pointer py-2 border-b border-white/10
+										transition-colors duration-300 ease-out hover:text-cyan-400'
+										onClick={() => clickHandler(href)}
+									>
+										{label}
+									</motion.li>
+								))}
+							</ul>
+							<Social size={28} className='justify-center' />
+						</motion.div>
+					</motion.div>
 				)}
-				onClick={() => setIsOpen(false)}
-			>
-				<div
-					ref={ref}
-					onClick={e => e.stopPropagation()}
-					className={cn(
-						'absolute right-0 top-0 bottom-0 min-w-[250px] p-6 shadow-lg transition-transform duration-300 cursor-auto',
-						'bg-gray-100 dark:bg-gray-700 flex flex-col justify-between',
-						isOpen ? 'translate-x-0' : 'translate-x-full'
-					)}
-				>
-					<ul className='flex flex-col gap-5 list-disc ml-5'>
-						{linksData.map(({ href, label }, i) => (
-							<li
-								key={href + label + i}
-								className='uppercase font-bold font-mono text-2xl hover:scale-105 hover:opacity-80
-								duration-300 cursor-pointer transition'
-								onClick={() => clickHandler(href)}
-							>
-								{label}
-							</li>
-						))}
-					</ul>
-					<Social size={30} className='justify-center' />
-				</div>
-			</div>
+			</AnimatePresence>
 		)
 	}
 )

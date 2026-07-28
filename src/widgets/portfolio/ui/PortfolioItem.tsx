@@ -16,9 +16,11 @@ const PortfolioItem: FC<IPortfolioData> = ({
 		<motion.div
 			whileHover={{ y: -4 }}
 			transition={{ type: 'spring', stiffness: 280, damping: 22 }}
-			className='glass glow-accent p-6 md:p-10 lg:p-12 rounded-3xl overflow-hidden
-			w-full h-full flex flex-col md:flex-row lg:flex-row gap-6 md:gap-8 lg:gap-10
-			items-center lg:items-start isolate'
+			className='glass glow-accent-inset rounded-3xl overflow-hidden
+			border-cyan-400/30 dark:border-cyan-400/40
+			p-6 md:p-10 lg:p-12 w-full h-full
+			flex flex-col md:flex-row lg:flex-row gap-6 md:gap-8 lg:gap-10
+			items-center lg:items-start'
 		>
 			{isYoutubeUrl ? (
 				<iframe
